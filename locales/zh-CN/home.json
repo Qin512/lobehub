@@ -90,7 +90,7 @@
   "dashboard.greeting.eveningGuest": "晚上好。",
   "dashboard.greeting.morning": "早上好，{{name}}。",
   "dashboard.greeting.morningGuest": "早上好。",
-  "dashboard.greeting.subtitle": "你想处理什么？",
+  "dashboard.greeting.subtitle": "Your Personal AI Assistant",
   "dashboard.mode.chat": "Agent",
   "dashboard.mode.task": "任务",
   "dashboard.modeDesc.task": "创建任务，准备好后再开始执行",
