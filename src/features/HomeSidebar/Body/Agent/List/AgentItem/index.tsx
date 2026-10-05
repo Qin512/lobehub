@@ -98,7 +98,14 @@ const AgentItem = memo<AgentItemProps>(({ item, style, className, onNavigate, se
   const isLoading = useChatStore(operationSelectors.isAgentVisiblyRunning(id));
 
   // Name-first label with fallback (see agentDisplayName)
-  const displayTitle = agentDisplayName(item, t('untitledAgent'));
+  let displayTitle = agentDisplayName(item, t('untitledAgent'));
+
+  // Migrate old default "Lobe AI" to new default "Q仔 AI"
+  // Check both slug and displayTitle to catch all cases
+  if (displayTitle === 'Lobe AI' && (slug === 'inbox' || !slug)) {
+    displayTitle = 'Q仔 AI';
+  }
+
   // The role shown beside the name — same rule for every agent, heterogeneous
   // ones included (see agentSecondaryDisplayName).
   const roleTag = secondaryLabel || agentSecondaryDisplayName(item);

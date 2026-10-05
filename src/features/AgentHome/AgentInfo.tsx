@@ -31,9 +31,18 @@ const AgentInfo = memo(() => {
   );
   const fontSize = useUserStore(userGeneralSettingsSelectors.fontSize);
 
-  const displayTitle = isInbox
-    ? agentDisplayName(meta, 'Q仔 AI')
-    : agentDisplayName(meta, t('defaultSession', { ns: 'common' }));
+  const displayTitle = useMemo(() => {
+    const title = isInbox
+      ? agentDisplayName(meta, 'Q仔 AI')
+      : agentDisplayName(meta, t('defaultSession', { ns: 'common' }));
+
+    // Migrate old default "Lobe AI" to new default "Q仔 AI"
+    if (title === 'Lobe AI') {
+      return 'Q仔 AI';
+    }
+
+    return title;
+  }, [isInbox, meta, t]);
 
   const message = useMemo(() => {
     if (openingMessage) return openingMessage;

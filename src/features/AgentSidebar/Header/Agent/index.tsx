@@ -1,7 +1,7 @@
 'use client';
 
 import type { PropsWithChildren } from 'react';
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { DEFAULT_AVATAR, DEFAULT_INBOX_AVATAR } from '@/const/meta';
@@ -23,9 +23,18 @@ const Agent = memo<PropsWithChildren>(() => {
     agentSelectors.currentAgentBackgroundColor(s),
   ]);
 
-  const displayTitle = isInbox
-    ? title || 'Q仔 AI'
-    : title || t('defaultSession', { ns: 'common' });
+  const displayTitle = useMemo(() => {
+    const resolvedTitle = isInbox
+      ? title || 'Q仔 AI'
+      : title || t('defaultSession', { ns: 'common' });
+
+    // Migrate old default "Lobe AI" to new default "Q仔 AI"
+    if (resolvedTitle === 'Lobe AI') {
+      return 'Q仔 AI';
+    }
+
+    return resolvedTitle;
+  }, [isInbox, title, t]);
 
   if (isLoading) return <SkeletonItem height={32} padding={0} />;
 
