@@ -28,7 +28,7 @@ const styles = createStaticStyles(({ css }) => ({
 
 /**
  * The "Comment" action on the body's selection toolbar — the entry point for an
- * anchored comment, sitting next to Ask Lobe AI because both act on whatever
+ * anchored comment, sitting next to Ask Q仔 AI because both act on whatever
  * the reader just selected.
  *
  * The anchor is read from the native DOM selection rather than the editor's
