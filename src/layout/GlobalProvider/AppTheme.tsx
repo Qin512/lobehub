@@ -182,7 +182,7 @@ const AppTheme = memo<AppThemeProps>(
           defaultThemeMode={currentAppearence}
           customTheme={{
             neutralColor: neutralColor ?? defaultNeutralColor,
-            primaryColor: primaryColor ?? defaultPrimaryColor,
+            primaryColor: primaryColor ?? defaultPrimaryColor ?? 'cyan',
           }}
           theme={{
             cssVar: { key: 'lobe-vars' },

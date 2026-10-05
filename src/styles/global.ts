@@ -65,12 +65,20 @@ const genGlobalStyle = ({ token }: { prefixCls: string; token: Theme }) => css`
     -moz-osx-font-smoothing: auto;
   }
 
-  html.desktop[data-theme='dark'] body {
+  html[data-theme='dark'] body {
     background-color: color-mix(in srgb, ${token.colorBgLayout} 50%, transparent);
   }
 
-  html.desktop[data-theme='light'] body {
-    background-color: color-mix(in srgb, ${token.colorBgLayout} 70%, transparent);
+  html[data-theme='light'] body {
+    background-color: #87CEEB;
+  }
+
+  /* Make main layout containers transparent to show sky blue body background */
+  html[data-theme='light'] .ant-app,
+  html[data-theme='light'] .base-draggable-panel,
+  html[data-theme='light'] .base-draggable-panel-content,
+  html[data-theme='light'] .lobe-flex {
+    background: transparent !important;
   }
 
   button {
