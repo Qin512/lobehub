@@ -84,7 +84,7 @@ const steps = {
       UPDATE_SERVER_URL: `http://127.0.0.1:${PORT}/${CHANNEL}`,
       APP_URL: 'http://localhost:3015',
       DATABASE_URL: 'postgresql://postgres@localhost:5432/postgres',
-      KEY_VAULTS_SECRET: 'oLXWIiR/AKF+rWaqy9lHkrYgzpATbW3CtJp3UfkVgpE=',
+      KEY_VAULTS_SECRET: process.env.KEY_VAULTS_SECRET || 'test-key-vaults-secret-for-e2e',
     };
     // Electron derives userData from package.json name; productName alone would share the dev instance's data.
     const pkg = JSON.parse(readFileSync(path.join(DESKTOP_DIR, 'package.json'), 'utf8'));

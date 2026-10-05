@@ -41,7 +41,7 @@ jobs:
           RENDERER_OTA_PUBLIC_KEY: ${{ secrets.RENDERER_OTA_PUBLIC_KEY }}
           APP_URL: http://localhost:3015
           DATABASE_URL: 'postgresql://postgres@localhost:5432/postgres'
-          KEY_VAULTS_SECRET: 'oLXWIiR/AKF+rWaqy9lHkrYgzpATbW3CtJp3UfkVgpE='
+          KEY_VAULTS_SECRET: ${{ secrets.KEY_VAULTS_SECRET }}
 
       - name: Build unsigned core manifest
         working-directory: apps/desktop

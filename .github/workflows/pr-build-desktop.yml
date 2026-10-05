@@ -136,7 +136,7 @@ jobs:
           APP_URL: http://localhost:3015
           DATABASE_URL: 'postgresql://postgres@localhost:5432/postgres'
           # 默认添加一个加密 SECRET
-          KEY_VAULTS_SECRET: 'oLXWIiR/AKF+rWaqy9lHkrYgzpATbW3CtJp3UfkVgpE='
+          KEY_VAULTS_SECRET: ${{ secrets.KEY_VAULTS_SECRET }}
           # macOS 签名和公证配置（fork 的 PR 访问不到 secrets，会跳过签名）
           CSC_LINK: ${{ secrets.APPLE_CERTIFICATE_BASE64 }}
           CSC_KEY_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
@@ -160,7 +160,7 @@ jobs:
           UPDATE_SERVER_URL: ${{ secrets.UPDATE_SERVER_URL }}
           APP_URL: http://localhost:3015
           DATABASE_URL: 'postgresql://postgres@localhost:5432/postgres'
-          KEY_VAULTS_SECRET: 'oLXWIiR/AKF+rWaqy9lHkrYgzpATbW3CtJp3UfkVgpE='
+          KEY_VAULTS_SECRET: ${{ secrets.KEY_VAULTS_SECRET }}
           NEXT_PUBLIC_DESKTOP_PROJECT_ID: ${{ secrets.UMAMI_NIGHTLY_DESKTOP_PROJECT_ID }}
           NEXT_PUBLIC_DESKTOP_UMAMI_BASE_URL: ${{ secrets.UMAMI_NIGHTLY_DESKTOP_BASE_URL }}
           # 将 TEMP 和 TMP 目录设置到 C 盘
@@ -177,7 +177,7 @@ jobs:
           UPDATE_SERVER_URL: ${{ secrets.UPDATE_SERVER_URL }}
           APP_URL: http://localhost:3015
           DATABASE_URL: 'postgresql://postgres@localhost:5432/postgres'
-          KEY_VAULTS_SECRET: 'oLXWIiR/AKF+rWaqy9lHkrYgzpATbW3CtJp3UfkVgpE='
+          KEY_VAULTS_SECRET: ${{ secrets.KEY_VAULTS_SECRET }}
           NEXT_PUBLIC_DESKTOP_PROJECT_ID: ${{ secrets.UMAMI_NIGHTLY_DESKTOP_PROJECT_ID }}
           NEXT_PUBLIC_DESKTOP_UMAMI_BASE_URL: ${{ secrets.UMAMI_NIGHTLY_DESKTOP_BASE_URL }}
 

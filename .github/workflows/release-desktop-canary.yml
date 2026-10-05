@@ -329,7 +329,7 @@ jobs:
           RELEASE_NOTES: ${{ needs.calculate-version.outputs.release_notes }}
           APP_URL: http://localhost:3015
           DATABASE_URL: 'postgresql://postgres@localhost:5432/postgres'
-          KEY_VAULTS_SECRET: 'oLXWIiR/AKF+rWaqy9lHkrYgzpATbW3CtJp3UfkVgpE='
+          KEY_VAULTS_SECRET: ${{ secrets.KEY_VAULTS_SECRET }}
           CSC_LINK: ${{ secrets.APPLE_CERTIFICATE_BASE64 }}
           CSC_KEY_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
           CSC_FOR_PULL_REQUEST: true
@@ -352,7 +352,7 @@ jobs:
           RELEASE_NOTES: ${{ needs.calculate-version.outputs.release_notes }}
           APP_URL: http://localhost:3015
           DATABASE_URL: 'postgresql://postgres@localhost:5432/postgres'
-          KEY_VAULTS_SECRET: 'oLXWIiR/AKF+rWaqy9lHkrYgzpATbW3CtJp3UfkVgpE='
+          KEY_VAULTS_SECRET: ${{ secrets.KEY_VAULTS_SECRET }}
           NEXT_PUBLIC_DESKTOP_PROJECT_ID: ${{ secrets.UMAMI_BETA_DESKTOP_PROJECT_ID }}
           NEXT_PUBLIC_DESKTOP_UMAMI_BASE_URL: ${{ secrets.UMAMI_BETA_DESKTOP_BASE_URL }}
           TEMP: C:\temp
@@ -371,7 +371,7 @@ jobs:
           RELEASE_NOTES: ${{ needs.calculate-version.outputs.release_notes }}
           APP_URL: http://localhost:3015
           DATABASE_URL: 'postgresql://postgres@localhost:5432/postgres'
-          KEY_VAULTS_SECRET: 'oLXWIiR/AKF+rWaqy9lHkrYgzpATbW3CtJp3UfkVgpE='
+          KEY_VAULTS_SECRET: ${{ secrets.KEY_VAULTS_SECRET }}
           NEXT_PUBLIC_DESKTOP_PROJECT_ID: ${{ secrets.UMAMI_BETA_DESKTOP_PROJECT_ID }}
           NEXT_PUBLIC_DESKTOP_UMAMI_BASE_URL: ${{ secrets.UMAMI_BETA_DESKTOP_BASE_URL }}
 
