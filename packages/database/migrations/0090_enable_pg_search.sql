@@ -1,2 +1,3 @@
 -- Custom SQL migration file, put your code below! --
-CREATE EXTENSION IF NOT EXISTS pg_search;
+-- No-op in this fork: Neon rejects CREATE EXTENSION pg_search for new projects, which aborts
+-- the whole migrate run. Search runs on FTS_SEARCH_PROVIDER=pg_like instead.
