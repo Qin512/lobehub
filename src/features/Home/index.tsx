@@ -25,6 +25,7 @@ import HomeModeContent from './HomeModeContent';
 import HomePortrait from './HomePortrait';
 import InputArea from './InputArea';
 import PortraitBubble from './PortraitBubble';
+import QuickStartCard from './QuickStartCard';
 import {
   getHomePortraitOverlap,
   HOME_PORTRAIT_CARD_GAP,
@@ -428,6 +429,7 @@ const Home = memo(() => {
         data-testid={'home-main'}
         gap={24}
       >
+        <QuickStartCard />
         <Flexbox className={styles.inputArea} gap={12}>
           <InputArea
             showNewModelShortcuts
