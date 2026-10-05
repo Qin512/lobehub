@@ -1,26 +1,6 @@
 import { type MetadataRoute } from 'next';
 
 const manifest = async (): Promise<MetadataRoute.Manifest> => {
-  // Skip heavy module compilation in development
-  if (process.env.NODE_ENV === 'development') {
-    return {
-      background_color: '#000000',
-      description: 'LobeHub Development',
-      display: 'standalone',
-      icons: [
-        {
-          sizes: '192x192',
-          src: '/app-icons/icon-192x192.png',
-          type: 'image/png',
-        },
-      ],
-      name: 'LobeHub',
-      short_name: 'LobeHub',
-      start_url: '/',
-      theme_color: '#000000',
-    };
-  }
-
   const [{ BRANDING_LOGO_URL, BRANDING_NAME }, { kebabCase }, { manifestModule }] =
     await Promise.all([
       import('@lobechat/business-const'),
